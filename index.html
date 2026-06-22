@@ -1,0 +1,57 @@
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<div class="container">
+<h1>PROXIMA INSPECCION A-3400</h1>
+
+  <form id="formVehiculo">
+    <input id="placa" placeholder="Placa" required>
+    <input id="marca" placeholder="Marca" required>
+    <input id="modelo" placeholder="Modelo" required>
+
+    <input id="aceite" placeholder="Aceite">
+    <input id="filtroAceite" placeholder="Filtro de Aceite">
+    <input id="filtroAire" placeholder="Filtro de Aire">
+    <input id="refrigerante" placeholder="Refrigerante">
+    <input id="otros" placeholder="Otros Servicios">
+
+    <input id="km" type="number" placeholder="Kilometraje Actual">
+
+    <input id="proximoCambio" type="number"
+      placeholder="Próximo Cambio Aceite (km)">
+
+    <label>Vencimiento SOAT</label>
+    <input id="soat" type="date">
+
+    <label>Vencimiento RVT</label>
+    <input id="rvt" type="date">
+
+    <button type="submit">
+      Guardar Vehículo
+    </button>
+  </form>
+
+  <button onclick="borrarHistorial()">
+    Borrar Historial
+  </button>
+
+  <h2>Vehículos Registrados</h2>
+
+  <div id="historial"></div>
+</div>
+<div id="modal" class="modal">
+
+  <div class="modalContenido">
+
+    <span class="cerrar"
+      onclick="cerrarModal()">
+      ×
+    </span>
+
+    <div id="detalleVehiculo"></div>
+
+  </div>
+
+</div>
+<div class="firma">
+  Desarrollado por AMH
+</div>
