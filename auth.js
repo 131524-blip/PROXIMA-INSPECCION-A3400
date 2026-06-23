@@ -64,6 +64,13 @@ onAuthStateChanged(auth, (user) => {
     document.getElementById(
       "app"
     ).style.display = "block";
+    setTimeout(() => {
+
+  if(typeof revisarAlertas === "function"){
+    revisarAlertas();
+  }
+
+}, 1000);
 
   } else {
 
