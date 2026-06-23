@@ -1,5 +1,6 @@
 import {
-  initializeApp
+  initializeApp,
+  getApps
 } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
 
 import {
@@ -17,7 +18,10 @@ const firebaseConfig = {
   appId: "1:761631963435:web:ee950b3ce1f009f44e2d6e"
 };
 
-const app = initializeApp(firebaseConfig);
+const app =
+  getApps().length
+  ? getApps()[0]
+  : initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
 
