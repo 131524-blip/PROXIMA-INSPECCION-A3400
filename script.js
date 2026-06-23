@@ -43,12 +43,15 @@ document
 
   vehiculos.push(vehiculo);
 
-  guardarVehiculos(vehiculos);
+guardarVehiculos(vehiculos);
+
+if(window.guardarFirestore){
+  guardarFirestore(vehiculo);
+}
 
 this.reset();
 
 cargarVehiculos();
-});
 
 function cargarVehiculos(){
 
