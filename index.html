@@ -13,11 +13,33 @@ content="width=device-width, initial-scale=1.0">
 <title>PROXIMA INSPECCION A-3400</title>
 
 </head>
+<div id="loginBox">
 
+<h2>PROXIMA INSPECCION A-3400</h2>
+
+<input
+id="email"
+type="email"
+placeholder="Correo">
+
+<input
+id="password"
+type="password"
+placeholder="Contraseña">
+
+<button id="btnLogin">
+Iniciar Sesión
+</button>
+
+</div>
 <body>
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
-<div class="container">
+
+<div
+class="container"
+id="app"
+style="display:none;">
 <h1>PROXIMA INSPECCION A-3400</h1>
 
   <form id="formVehiculo">
@@ -74,6 +96,6 @@ content="width=device-width, initial-scale=1.0">
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="script.js"></script>
-
+<script type="module" src="auth.js"></script>
 </body>
 </html>
