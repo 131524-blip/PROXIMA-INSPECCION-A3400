@@ -133,42 +133,75 @@ function revisarAlertas(){
 
   obtenerVehiculos().forEach(v=>{
 
+    // SOAT
+
     if(v.soat){
 
-      const fechaSOAT =
-        new Date(v.soat);
+      const fechaSOAT = new Date(v.soat);
 
       const diasSOAT =
+      Math.ceil(
         (fechaSOAT - hoy) /
-        (1000*60*60*24);
+        (1000*60*60*24)
+      );
 
-      if(diasSOAT <= 7 &&
-         diasSOAT > 0){
+      if(diasSOAT <= 7 && diasSOAT >= 0){
 
         alert(
-          `SOAT próximo a vencer\n${v.placa}`
+          `⚠️ SOAT próximo a vencer\n\nPlaca: ${v.placa}\nFaltan ${diasSOAT} días`
         );
+
       }
+
     }
+
+    // RVT
 
     if(v.rvt){
 
-      const fechaRVT =
-        new Date(v.rvt);
+      const fechaRVT = new Date(v.rvt);
 
       const diasRVT =
+      Math.ceil(
         (fechaRVT - hoy) /
-        (1000*60*60*24);
+        (1000*60*60*24)
+      );
 
-      if(diasRVT <= 7 &&
-         diasRVT > 0){
+      if(diasRVT <= 7 && diasRVT >= 0){
 
         alert(
-          `RVT próxima a vencer\n${v.placa}`
+          `⚠️ RVT próxima a vencer\n\nPlaca: ${v.placa}\nFaltan ${diasRVT} días`
         );
+
       }
+
     }
+
+    // Cambio de aceite
+
+    if(v.proximoCambio && v.km){
+
+      const kmActual =
+      Number(v.km);
+
+      const kmCambio =
+      Number(v.proximoCambio);
+
+      const faltanKm =
+      kmCambio - kmActual;
+
+      if(faltanKm <= 500){
+
+        alert(
+          `🛢️ Cambio de aceite próximo\n\nPlaca: ${v.placa}\nFaltan ${faltanKm} km`
+        );
+
+      }
+
+    }
+
   });
+
 }
 
 window.onload = function(){
