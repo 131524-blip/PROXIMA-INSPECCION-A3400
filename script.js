@@ -53,6 +53,8 @@ this.reset();
 
 cargarVehiculos();
 
+});
+
 function cargarVehiculos(){
 
   const historial =
